@@ -1,0 +1,7 @@
+syntax = "proto3"; //版本
+option java_outer_classname = "MessagePojo";//生成的外部类名，同时也是文件名
+
+message Message {
+    int32 id = 1;//Message类的一个属性，属性名称是id，序号为1
+    string content = 2;//Message类的一个属性，属性名称是content，序号为2
+}

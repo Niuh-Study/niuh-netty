@@ -32,7 +32,7 @@ public class HeartBeatClient {
             Random random = new Random();
             while (channel.isActive()) {
                 int num = random.nextInt(10);
-                Thread.sleep(2 * 1000);
+                Thread.sleep(num * 1000);
                 channel.writeAndFlush(text);
             }
         } catch (Exception e) {

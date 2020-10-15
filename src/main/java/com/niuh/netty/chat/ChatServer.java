@@ -23,12 +23,13 @@ public class ChatServer {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
                             ChannelPipeline pipeline = ch.pipeline();
+                            pipeline.addLast(new ChatServerHandler());
+                            //加入自己的业务处理handler
                             //向pipeline加入解码器
                             pipeline.addLast("decoder", new StringDecoder());
                             //向pipeline加入编码器
                             pipeline.addLast("encoder", new StringEncoder());
-                            pipeline.addLast(new ChatServerHandler());
-                            //加入自己的业务处理handler
+
                         }
                     });
             System.out.println("聊天室server启动。。");
